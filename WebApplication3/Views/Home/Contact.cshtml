@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = null;
+}
+
+<link href="@Url.Content("~/Content/contact.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+
+<div class="navbar navbar-inverse navbar-fixed-top test">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Cities Categories", "Index", "Categories")</li>
+                <li>@Html.ActionLink("View cities and price", "Index", "Cities")</li>
+                <li>@Html.ActionLink("Log out", "Index", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header>
+    <h1>Contact Me</h1>
+    <hr>
+</header>
+
+<section>
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <br />
+        <button type="submit" style="color: #fff">Submit</button>
+    </form>
+    <address>
+        My email:
+        <a href="qq@qq.com">Bo Yang</a>
+    </address>
+</section>
+<footer>
+    <p>Copyright &copy; 2023</p>
+</footer>
+
+<script src="~/Scripts/contact.js"></script>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication3.Models.Category>
+
+@{
+    ViewBag.Title = "All cities";
+}
+
+<h2>Cities</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="cities-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Name, "Index", "Cities", new { Category = item.Name }, null)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

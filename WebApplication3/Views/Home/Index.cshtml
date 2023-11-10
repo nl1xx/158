@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "LOG IN";
+    // Set this view not to use layout pages
+    Layout = null;
+}
+
+<link href="@Url.Content("~/Content/login.css")" rel="stylesheet" type="text/css" />
+<div class="leftBox">
+    <span class="mainTitle">A Journey Website</span>
+    <span class="mainSubtitle">Enjoy This Moment</span>
+</div>
+<!--all box-->
+<div class="login_box">
+    <h1 class="title">A Journey Website</h1>
+    <h2 class="subtitle">Log in</h2>
+    <!--       account and password box-->
+    <div class="detail">
+        <label>
+            <span>Account</span>
+            <input type="text" required placeholder="Enter Account" id="account">
+        </label>
+        <label>
+            <span>Password</span>
+            <input type="password" required placeholder="Enter Password" id="password">
+        </label>
+    </div>
+    <!--       button box-->
+    <div class="buttons">
+        <button type="button" id="btn">
+            <a href="#">Login</a>
+        </button>
+        <button type="reset">
+            <a href="#">
+                Reset
+            </a>
+        </button>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/login.js")" type="text/javascript"></script>

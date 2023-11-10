@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = null;
+}
+@* <h2>@ViewBag.Title.</h2> *@
+@* <h3>@ViewBag.Message</h3> *@
+@*@Styles.Render("~/Content/css");*@
+<link href="@Url.Content("~/Content/about.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+
+<div class="navbar navbar-inverse navbar-fixed-top test">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Cities Categories", "Index", "Categories")</li>
+                <li>@Html.ActionLink("View cities and price", "Index", "Cities")</li>
+                <li>@Html.ActionLink("Log out", "Index", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header>
+    <h1>About Me</h1>
+    <hr>
+</header>
+
+<section>
+    <h2>Who I AM</h2>
+    <p>
+        I am a student of HeBei university of technology and Massey university.I am a developer and designer dedicated to creating beautiful and functional websites.
+        I pride myself on my attention to detail. I work closely with my clients to ensure that their vision is realized and their goals are achieved.
+    </p>
+</section>
+
+<section>
+    <h2>My Services</h2>
+    <ul>
+        <li>Web Design</li>
+        <li>Web Development</li>
+        <li>Responsive Design</li>
+        <li>Beautiful website</li>
+        <li>Sharing famous places</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Introduction</h2>
+    <ul>
+        <li>
+            <img src="~/Content/Image/self.png" alt="my introduction">
+            <h3>Bo Yang</h3>
+            <p>Developer</p>
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <p>Copyright &copy; 2023</p>
+</footer>

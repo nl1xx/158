@@ -1,0 +1,121 @@
+﻿@model IEnumerable<WebApplication3.Models.City_Tianjin>
+
+@{
+    ViewBag.Title = "Tianjin";
+}
+
+@*<h2>Comments for Tianjin</h2>*@
+
+<link href="@Url.Content("~/Content/cityDetail.css")" rel="stylesheet" type="text/css" />
+<!-- navigation bar-->
+<div class="all">
+    <div class="header">
+        <header>
+            <h1>Trip In Tianjin</h1>
+        </header>
+        <nav>
+            <div class="navLink">
+                <ul>
+                    <li class="active">Active</li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="allMain">
+        <!-- main part-->
+        <div class="main">
+            <div class="mainContent">
+                <h2>Main Content</h2>
+                <p>
+                    Tianjin is a tourist attraction and commercial center that blends Chinese and Western cultures,
+                    historical and cultural heritage, and modern cityscape. Tianjin has a rich historical and cultural 
+                    heritage, such as the Ruyi Garden, the Ancient Culture Street and the Dagukou Fort. There are also
+                    a variety of modern buildings and attractions, such as the Tianjin Eye Observation Wheel.
+                </p>
+            </div>
+            <div class="bottomContent">
+                <!-- left top box -->
+                <div class="leftTopBox">
+                    <h2>
+                        Scene 1
+                    </h2>
+                    <img src="~/Content/Image/picture4.jpg" alt="Scene 1" class="leftTopImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- right top box -->
+                <div class="rightTopBox">
+                    <h2>
+                        Scene 2
+                    </h2>
+                    <img src="~/Content/Image/picture4.jpg" alt="Scene 2" class="rightTopImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- left bottom box -->
+                <div class="leftBottomBox">
+                    <h2>
+                        Scene 3
+                    </h2>
+                    <img src="~/Content/Image/picture4.jpg" alt="Scene 3" class="leftBottomImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- right bottom box -->
+                <div class="rightBottomBox">
+                    <h2>
+                        Scene 4
+                    </h2>
+                    <img src="~/Content/Image/picture4.jpg" alt="Scene 3" class="rightBottomImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- right navigation bar-->
+        <div class="rightHandSidebar">
+            <h2>Comments</h2>
+            @foreach (var item in Model)
+            {
+                <p>
+                    @Html.DisplayFor(modelItem => item.mainContent)
+                    <br />
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                </p>
+            }
+            <span>
+                @Html.ActionLink("Create New", "Create")
+            </span>
+            <br />
+            <a href="/PersonalComments" class="bottomAhref">
+                Click to view all reviews.
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2023</p>
+    </footer>
+</div>

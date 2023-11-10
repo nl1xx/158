@@ -1,0 +1,81 @@
+﻿/*reset*/
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: url("../Content/Image/Login.jpg") no-repeat;
+}
+
+.leftBox {
+    float: left;
+    color: #D99F90;
+}
+
+    .leftBox .mainTitle {
+        display: block;
+        margin: 250px 100px 0;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .leftBox .mainSubtitle {
+        display: inline-block;
+        margin: 30px 500px;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+.login_box {
+    position: relative;
+    float: right;
+    width: 450px;
+    height: 500px;
+    top: -200px;
+    right: 100px;
+    background: rgba(10, 10, 10, .5);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+    .login_box .title, .subtitle {
+        text-align: center;
+        margin: 10px auto 0;
+        color: #2c8dfb;
+    }
+
+    .login_box .detail {
+        margin: 60px auto;
+    }
+
+        .login_box .detail span {
+            margin-left: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .login_box .detail input {
+            display: block;
+            width: 90%;
+            height: 50px;
+            margin: 0 auto;
+            border: 0;
+            font-size: 15px;
+            outline: none;
+        }
+
+    .login_box .buttons button {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        margin-left: 80px;
+    }
+
+        .login_box .buttons button:hover {
+            transform: translateY(-5px);
+            cursor: pointer;
+        }

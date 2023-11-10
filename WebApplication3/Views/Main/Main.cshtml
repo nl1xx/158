@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Main Page";
+    // Layout = null;
+}
+@model WebApplication3.Models.MainCityInfo
+
+<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
+
+<div class="allBox">
+    <div class="search">
+        @*<form>
+            <label>
+                <input type="text" placeholder="Enter content" id="topSearch">
+            </label>
+            <button id="submit">submit</button>
+        </form>*@
+        <a href="/PersonalComments" class="topView">Click to see all the top reviews</a>
+        <br />
+        <a href="/cities" class="clickPrice">
+            Click to learn about the price of all cities.
+        </a>
+    </div>
+
+    <div class="top">
+        <p class="title">
+            A Journey Website
+        </p>
+        <p class="subtitle">
+            We make custom trips, just for you. Your holiday, your way.
+        </p>
+        <p class="thirdTitle">
+            We share journey
+        </p>
+    </div>
+
+    <div class="banners">
+        <ul class="images">
+            <li>
+                <a href="#"><img src="~/Content/Image/main1.jpg" alt="main 1"></a>
+            </li>
+            <li>
+                <a href="#"><img src="~/Content/Image/main2.png" alt="main 2"></a>
+            </li>
+            <li>
+                <a href="#"><img src="~/Content/Image/main3.jpg" alt="main 3"></a>
+            </li>
+        </ul>
+        <!-- left arrowhead -->
+        <a href="javascript:;" class="prev"> &lt;</a>
+        <!-- right arrowhead -->
+        <a href="javascript:;" class="next"> &gt;</a>
+        <!-- dot  -->
+        <ul class="dots">
+            <!-- li can be dynamically generated using JS-->
+        </ul>
+    </div>
+
+    <div class="bottom">
+        <div class="city1 city" id="city1">
+            <img src="~/Content/Image/picture1.jpg" alt="Beijing">
+            <span>@Model.name[0]</span>
+            <p class="more more1" id="btn1">
+                Learn more >
+            </p>
+        </div>
+        <div class="city2 city" id="city2">
+            <img src="~/Content/Image/picture3.jpg" alt="Tianjin">
+            <span>@Model.name[1]</span>
+            <p class="more more2" id="btn2">
+                Learn more >
+            </p>
+        </div>
+        <div class="city3 city" id="city3">
+            <img src="~/Content/Image/picture5.jpg" alt="New Zealand">
+            <span>@Model.name[2]</span>
+            <p class="more more3" id="btn3">
+                Learn more >
+            </p>
+        </div>
+
+        <div class="realBottom">
+            <div class="realItem first" id="first">
+                <span>
+                    @Model.description[0]
+                </span>
+            </div>
+            <div class="realItem second" id="second">
+                <span>
+                    @Model.description[1]
+                </span>
+            </div>
+            <div class="realItem third" id="third">
+                <span>
+                    @Model.description[2]
+                </span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2023</p>
+    </footer>
+</div>
+<script src="@Url.Content("~/Scripts/carouselAndothers.js")" type="text/javascript"></script>
+<script>
+    //jump 
+    var btn1 = document.getElementById("btn1")
+    btn1.addEventListener("click", ev => {
+        window.location.href = "/City_Beijing/Index"
+    })
+
+    var btn2 = document.getElementById("btn2")
+    btn2.addEventListener("click", ev => {
+        window.location.href = "/City_Tianjin/Index"
+    })
+
+    var btn3 = document.getElementById("btn3")
+    btn3.addEventListener("click", ev => {
+        window.location.href = "/City_NewZealand/Index"
+    })
+</script>

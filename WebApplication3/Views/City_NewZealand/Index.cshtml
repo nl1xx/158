@@ -1,0 +1,121 @@
+﻿@model IEnumerable<WebApplication3.Models.City_NewZealand>
+
+@{
+    ViewBag.Title = "NewZealand";
+}
+
+@*<h2> NewZealand</h2>*@
+
+
+<link href="@Url.Content("~/Content/cityDetail.css")" rel="stylesheet" type="text/css" />
+<!-- navigation bar-->
+<div class="all">
+    <div class="header">
+        <header>
+            <h1>Trip In NewZealand</h1>
+        </header>
+        <nav>
+            <div class="navLink">
+                <ul>
+                    <li class="active">Active</li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="allMain">
+        <!-- main part-->
+        <div class="main">
+            <div class="mainContent">
+                <h2>Main Content</h2>
+                <p>
+                    Travel around New Zealand and experience its pristine wilderness and diverse culture. Find inspiration
+                    in the towering mountains and mist-shrouded fjords; Stroll on the golden sand beach and feel the tranquility of
+                    the bay surrounded on all sides; Meet new people and spend quality time together in a laid-back town.
+                </p>
+            </div>
+            <div class="bottomContent">
+                <!-- left top box -->
+                <div class="leftTopBox">
+                    <h2>
+                        Scene 1
+                    </h2>
+                    <img src="~/Content/Image/picture5.jpg" alt="Scene 1" class="leftTopImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- right top box -->
+                <div class="rightTopBox">
+                    <h2>
+                        Scene 2
+                    </h2>
+                    <img src="~/Content/Image/picture5.jpg" alt="Scene 2" class="rightTopImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- left bottom box -->
+                <div class="leftBottomBox">
+                    <h2>
+                        Scene 3
+                    </h2>
+                    <img src="~/Content/Image/picture5.jpg" alt="Scene 3" class="leftBottomImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+                <!-- right bottom box -->
+                <div class="rightBottomBox">
+                    <h2>
+                        Scene 4
+                    </h2>
+                    <img src="~/Content/Image/picture5.jpg" alt="Scene 3" class="rightBottomImage"> <!--change value of alt when we have pictures -->
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- right navigation bar-->
+        <div class="rightHandSidebar">
+            <h2>Comments</h2>
+            @foreach (var item in Model)
+            {
+                <p>
+                    @Html.DisplayFor(modelItem => item.mainContent)
+                    <br />
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                </p>
+            }
+        <span>
+            @Html.ActionLink("Create New", "Create")
+        </span>
+            <br />
+        <a href="/PersonalComments" class="bottomAhref">
+             Click to view all reviews.
+        </a>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2023</p>
+    </footer>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApplication3.Models.Cities>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Price and description";
+}
+
+<h2>All cities and price</h2>
+
+@Html.ActionLink("Create New", "Create")
+@using (Html.BeginForm("Index", "Cities", FormMethod.Get))
+{
+    <label>Filter by category:</label> @Html.DropDownList("Category", "All")
+    <input type="Submit" value="Filter" />
+    <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+    @Html.DropDownList("sortBy", "default")
+    <input type="submit" value="submit" />
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Category.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
